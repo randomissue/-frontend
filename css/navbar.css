@@ -6,57 +6,14 @@ nav.navbar {
   top: 0;
   right: 0;
   height: 72px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 0px solid #eee;
   background: #fff;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-nav.navbar .menu-button {
-  font-size: 28px;
-  color: #33FAFF;
-  display: none;
-}
-
-nav.navbar .nav-section {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 40px;
-}
-
-nav.navbar .nav-section.nav-left {
-  justify-content: flex-start;
-}
-
-nav.navbar .nav-section.nav-left {
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 nav.navbar #logo {
   height: 22px;
   transform: translateY(3px)
-}
-
-nav.navbar ul.nav-links-lg li {
-  list-style: none;
-  display: inline-flex;
-  font-weight: bold;
-  margin: 0 14px;
-  text-transform: uppercase;
-}
-
-nav.navbar ul li a.active {
-  color: #33FAFF;
-}
-
-/* Menu styles for small-width viewports */
-
-.menu-mobile {
-  display: flex;
-  position: fixed;
-  top: 70px;
-  right: 0
-  left: 0;
-  flex-direction: row;
 }
