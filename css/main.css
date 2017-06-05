@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+@import url('navbar.css');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #FFFFFF;
+  color: #999;
+  font-size: 17px;
+  font-family: "Montserrat", Arial;
+  overflow-x: hidden;
+}
+
+/* === LINKS === */
+
+a {
+  color: #FFF;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;s
+}
+
+/* === FLEXBOX WRAPPER FOR EASY CENTERING === */
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+/* === ISSUE GENERATOR BUTTON === */
+
+#issue-button {
+  padding: 0 72px;
+  height: 60px;
+  color: #ffffff;
+  background: transparent;
+  border: 0px;
+  border-radius: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  animation: rainbow 7s infinite;
+  animation-timing-function: linear;
+}
+
+#issue-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* === ANIMATIONS === */
+
+@keyframes rainbow {
+  0% { background: #ff4466; }
+  17% { background: #ff9d40; }
+  33% { background: #ffff40; }
+  50% { background: #17ff40; }
+  67% { background: #00c4fa; }
+  83% { background: #d041fa; }
+  100% { background: #ff4466; }
+}
+
+/* === BREAKPOINTS === */
+
+/* Smartphones -- landscape and portrait */
+@media only screen and (max-width : 640px) {
+  .nav-links-sm {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    top: 72px;
+    background: #668;
+    padding: 0;
+    transform: translateY(-150px);
+    transition: transform 0.2s ease-out;
+  }
+
+  .nav-links-sm.active {
+    transform: translateY(0px);
+  }
+
+  .nav-links-sm li {
+    list-style: none;
+    width: 100vw;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-links-lg {
+    display: none;
+  }
+
+  #nav-links ul li {
+    list-style: none;
+  }
+  nav.navbar .menu-button {
+    display: inline-flex;
+  }
+  #issue-button {
+    padding: 0 32px;
+    font-size: 18px;
+  }
+}
