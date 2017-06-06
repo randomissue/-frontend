@@ -47,8 +47,15 @@ a:hover {
   cursor: pointer;
   user-select: none;
   transition: background 0.2s ease, transform 0.3s ease-out;
-  animation: rainbow 7s infinite;
-  animation-timing-function: linear;
+  background: linear-gradient(270deg, #f71628, #f7a316, #a2f716, #16f764, #16f7e5, #166af7, #6116f7, #ba16f7, #f716c7);
+  background-size: 1800% 1800%;
+  animation: gradientSweep 42s ease infinite;
+}
+
+@keyframes gradientSweep {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 #issue-button:hover {
