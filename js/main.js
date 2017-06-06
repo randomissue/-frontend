@@ -3,7 +3,7 @@ var app = new Vue({
   data: {
     issueJSON: undefined,
     showIssue: false,
-    buttonText: buttonStates.normal,
+    buttonText: this.buttonStates.normal,
     buttonStates: {
       normal: "Get a random GitHub issue!",
       loading: "Loading ...",
