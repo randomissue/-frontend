@@ -1,6 +1,6 @@
 var app = new Vue({
   el: "#app",
-  functions: {
+  methods: {
     getIssue: function() {
       console.log("getIssue called");
       var xhr = new XMLHttpRequest();
