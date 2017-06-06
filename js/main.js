@@ -6,15 +6,16 @@ var app = new Vue({
   },
   methods: {
     getIssue: function() {
+      var vm = this;
       console.log("getIssue executed");
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "/issue", true);
       xhr.onload = function (e) {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            this.issueJSON = JSON.parse(xhr.responseText);
+            vm.issueJSON = JSON.parse(xhr.responseText);
             console.log(this.issueJSON.title)
-            this.showIssue = true;
+            vm.showIssue = true;
           } else {
             console.error(xhr.statusText);
           }
