@@ -34,10 +34,6 @@ var app = new Vue({
   }
 });
 
-Vue.nextTick(function () {
-  vm.$el.textContent === 'new message' // true
-})
-
 app.$watch('showIssue', function (newVal, oldVal) {
   console.log("showIssue changed from" + oldVal + " to " + newVal);
 })
