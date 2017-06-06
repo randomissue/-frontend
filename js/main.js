@@ -3,12 +3,12 @@ var app = new Vue({
   data: {
     issueJSON: undefined,
     showIssue: false,
-    buttonText: this.buttonStates.normal,
     buttonStates: {
       normal: "Get a random GitHub issue!",
       loading: "Loading ...",
       finished: "Finished!"
-    }
+    },
+    buttonText: this.buttonStates.normal
   },
   created: function() {
     this.getIssue();
