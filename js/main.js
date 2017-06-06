@@ -6,6 +6,7 @@ var app = new Vue({
   },
   methods: {
     getIssue: function() {
+      console.log("getIssue executed");
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "/issue", true);
       xhr.onload = function (e) {
