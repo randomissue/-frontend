@@ -56,6 +56,7 @@ a:hover {
 
 #issue-button.hidden {
   transform: translateX(100vw);
+  background: #f00;
 }
 
 /* === LOADING SPINNER === */
