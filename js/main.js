@@ -3,7 +3,7 @@ var app = new Vue({
   data: {
     issueJSON: undefined,
     showIssue: false
-  }
+  },
   methods: {
     getIssue: function() {
       console.log("getIssue called");
