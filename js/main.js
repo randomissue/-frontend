@@ -2,13 +2,7 @@ var app = new Vue({
   el: "#app",
   data: {
     issueJSON: undefined,
-    showIssue: false,
-    buttonStates: {
-      normal: "Get a random GitHub issue!",
-      loading: "Loading ...",
-      finished: "Finished!"
-    },
-    buttonText: this.buttonStates.normal
+    showIssue: false
   },
   created: function() {
     this.getIssue();
@@ -18,15 +12,10 @@ var app = new Vue({
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "/issue", true);
       xhr.onload = function (e) {
-        if (xhr.readyState === 0) {
-          this.buttonText = this.buttonStates.loading;
-        }
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            this.buttonText = "Parsing JSON ...";
             this.issueJSON = JSON.parse(xhr.responseText);
             console.log(this.issueJSON.title);
-            this.buttonText = this.buttonState.finished
             this.showIssue = true;
           } else {
             console.error(xhr.statusText);
