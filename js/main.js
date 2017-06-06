@@ -17,6 +17,9 @@ var app = new Vue({
             this.issueJSON = JSON.parse(xhr.responseText);
             console.log(this.issueJSON.title);
             this.showIssue = true;
+            this.$nextTick(function () {
+              console.log(this.showIssue);
+            });
           } else {
             console.error(xhr.statusText);
           }
@@ -30,6 +33,10 @@ var app = new Vue({
 
   }
 });
+
+Vue.nextTick(function () {
+  vm.$el.textContent === 'new message' // true
+})
 
 app.$watch('showIssue', function (newVal, oldVal) {
   console.log("showIssue changed from" + oldVal + " to " + newVal);
