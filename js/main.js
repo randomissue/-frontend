@@ -18,7 +18,7 @@ var app = new Vue({
           if (xhr.status === 200) {
             this.issueJSON = JSON.parse(xhr.responseText);
             console.log(this.issueJSON.title);
-            this.showButton: false;
+            this.showButton = false;
             this.showIssue = true;
           } else {
             console.error(xhr.statusText);
