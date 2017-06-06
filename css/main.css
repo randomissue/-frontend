@@ -48,8 +48,8 @@ a:hover {
   user-select: none;
   transition: background 0.2s ease, transform 0.3s ease-out;
   background: linear-gradient(270deg, #f71628, #f7a316, #a2f716, #16f764, #16f7e5, #166af7, #6116f7, #ba16f7, #f716c7);
-  background-size: 1800% 1800%;
-  animation: gradientSweep 42s ease infinite;
+  background-size: 180% 180%;
+  animation: gradientSweep 21s ease infinite;
 }
 
 @keyframes gradientSweep {
