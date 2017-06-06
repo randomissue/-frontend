@@ -19,7 +19,7 @@
       </div>
     </nav>
     <div class="flex-center">
-      <button type="button" id="issue-button">Get a random GitHub issue!</button>
+      <button type="button" id="issue-button" @click="getIssue">Get a random GitHub issue!</button>
       <div id="issue-content">
         <div id="issue-header">
           <div id="issue-title"></div>
@@ -29,6 +29,7 @@
       </div>
     </div>
 
+    <script type="text/javascript" src="js/lib/vue.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
