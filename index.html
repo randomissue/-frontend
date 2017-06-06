@@ -20,7 +20,7 @@
         </div>
       </nav>
       <div class="flex-center">
-        <button type="button" id="issue-button" @click="getIssue" :class="{hidden: true}">Get a random GitHub issue!</button>
+        <button type="button" id="issue-button" @click="getIssue" :class="{hidden: showIssue}">Get a random GitHub issue!</button>
         <div id="issue-content" v-if="showIssue">
           <div id="issue-header">
             <div id="issue-title">{{ issueJSON.title }}</div>
