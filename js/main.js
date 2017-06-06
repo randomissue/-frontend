@@ -30,3 +30,7 @@ var app = new Vue({
 
   }
 });
+
+app.$watch('showIssue', function (newVal, oldVal) {
+  console.log("showIssue changed from" + oldVal + " to " + newVal);
+})
