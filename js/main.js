@@ -1,7 +1,8 @@
 var app = new Vue({
-  el: "body",
+  el: "#app",
   functions: {
     getIssue: function() {
+      console.log("getIssue called");
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "/issue", true);
       xhr.onload = function (e) {
@@ -15,7 +16,7 @@ var app = new Vue({
       };
       xhr.onerror = function (e) {
         console.error(xhr.statusText);
-      }
+      };
       xhr.send(null);
     }
   }
