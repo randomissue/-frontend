@@ -134,3 +134,10 @@ a:hover {
     font-size: 18px;
   }
 }
+
+.fly-out-left-enter-active, .fly-out-left-leave-active {
+  transition: transform .3s ease-out;
+}
+.fly-out-left-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  transform: translateX(100vw);
+}

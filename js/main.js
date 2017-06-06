@@ -2,7 +2,8 @@ var app = new Vue({
   el: "#app",
   data: {
     issueJSON: undefined,
-    showIssue: false
+    showIssue: false,
+    showButton: true
   },
   created: function() {
     this.getIssue();
@@ -16,7 +17,8 @@ var app = new Vue({
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
             this.issueJSON = JSON.parse(xhr.responseText);
-            console.log(this.issueJSON.title)
+            console.log(this.issueJSON.title);
+            this.showButton: false;
             this.showIssue = true;
           } else {
             console.error(xhr.statusText);
