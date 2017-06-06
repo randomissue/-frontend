@@ -20,13 +20,13 @@
         </div>
       </nav>
       <div class="flex-center">
-        <button type="button" id="issue-button" @click="getIssue" v-if="showButton">Get a random GitHub issue!</button>
         <div id="issue-content" v-if="showIssue">
           <div id="issue-header">
             <div id="issue-title">{{ issueJSON.title }}</div>
             <div id="issue-description">{{ issueJSON.body }}</div>
           </div>
         </div>
+        <button type="button" id="issue-button" @click="getIssue" v-else>Get a random GitHub issue!</button>
       </div>
     </div>
     </div>

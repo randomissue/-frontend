@@ -2,8 +2,7 @@ var app = new Vue({
   el: "#app",
   data: {
     issueJSON: undefined,
-    showIssue: false,
-    showButton: true
+    showIssue: false
   },
   created: function() {
     this.getIssue();
@@ -18,16 +17,15 @@ var app = new Vue({
           if (xhr.status === 200) {
             this.issueJSON = JSON.parse(xhr.responseText);
             console.log(this.issueJSON.title);
-            this.showButton = false;
             this.showIssue = true;
           } else {
             console.error(xhr.statusText);
           }
         }
-      };
+      }
       xhr.onerror = function (e) {
         console.error(xhr.statusText);
-      };
+      }
       xhr.send(null);
     },
 
