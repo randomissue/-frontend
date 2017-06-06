@@ -8,7 +8,7 @@ var app = new Vue({
       xhr.onload = function (e) {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            renderIssue(xhr.responseText);
+            console.log(xhr.responseText);
           } else {
             console.error(xhr.statusText);
           }
@@ -21,8 +21,3 @@ var app = new Vue({
     }
   }
 });
-
-
-var renderIssue = function(issueJSON) {
-  console.log(issueJSON);
-}
