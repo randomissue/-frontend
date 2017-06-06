@@ -1,5 +1,9 @@
 var app = new Vue({
   el: "#app",
+  data: {
+    issueJSON: undefined,
+    showIssue: false
+  }
   methods: {
     getIssue: function() {
       console.log("getIssue called");
@@ -8,7 +12,8 @@ var app = new Vue({
       xhr.onload = function (e) {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            console.log(xhr.responseText);
+            this.issueJSON = JSON.parse(xhr.responseText);
+            this.showIssue = true;
           } else {
             console.error(xhr.statusText);
           }
@@ -18,6 +23,7 @@ var app = new Vue({
         console.error(xhr.statusText);
       };
       xhr.send(null);
-    }
+    },
+
   }
 });
