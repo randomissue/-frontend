@@ -7,26 +7,57 @@
 
     <title>IssueFix - Fix a random GitHub issue now!</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet" />
+    <link rel="stylesheet" href="css/lib/bulma.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <div id="app">
-      <nav class="navbar" role="navigation">
-        <div class="nav-section nav-left">
-          <div class="brand">
-            <img id="logo" src="img/logo.svg" alt="IssueFix" />
-          </div>
-        </div>
+      <nav class="navigation" role="navigation">
+        <img id="logo" src="img/logo.svg" alt="IssueFix" />
       </nav>
       <div class="flex-center">
-        <div id="issue-content" v-if="showIssue">
-          <div id="issue-header">
-            <div id="issue-title">{{ issueJSON.title }}</div>
-            <div id="issue-description">{{ issueJSON.body }}</div>
+        <div id="issue-content" :class="{'shown': loadedJSON}">
+          <div class="header">
+            <span class="title">404 page doesn't have search field</span>
+            <span class="id">#767</span>
+          </div>
+          <div class="body">
+            <article class="media">
+              <figure class="media-left">
+                <p class="image is-32x32">
+                  <img src="http://bulma.io/images/placeholders/128x128.png">
+                </p>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>valorin</strong> commented 6 hours ago
+                    <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                  </p>
+                </div>
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fa fa-reply"></i></span>
+                    </a>
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+                    </a>
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fa fa-heart"></i></span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+              <div class="media-right">
+                
+              </div>
+            </article>
           </div>
         </div>
-        <button type="button" id="issue-button" @click="getIssue" v-else>Get a random GitHub issue!</button>
+        <button type="button" id="issue-button" @click="getIssue" :class="{'hidden': loadedJSON}">Get a random GitHub issue!</button>
       </div>
     </div>
     </div>

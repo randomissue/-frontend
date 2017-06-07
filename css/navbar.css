@@ -1,19 +1,18 @@
 /* === NAVBAR === */
 
-nav.navbar {
+nav.navigation {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   height: 72px;
-  border-bottom: 0px solid #eee;
-  background: #F2F2F2;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-nav.navbar #logo {
+nav.navigation #logo {
   height: 22px;
   transform: translateY(3px)
 }
