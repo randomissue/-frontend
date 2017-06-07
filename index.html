@@ -34,7 +34,7 @@
                   <p>
                     <strong>{{ issueObject.user.login }}</strong> (Created: {{ issueObject.created_at }})
                     <br>
-                    {{ issueObject.body }}
+                    {{ issueBody }}
                   </p>
                 </div>
                 <nav class="level is-mobile">
@@ -62,6 +62,7 @@
     </div>
     </div>
     <script type="text/javascript" src="js/lib/vue.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/showdownjs/showdown/1.7.1/dist/showdown.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

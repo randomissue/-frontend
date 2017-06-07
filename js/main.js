@@ -2,7 +2,8 @@ var app = new Vue({
   el: "#app",
   data: {
     issueObject: undefined,
-    loadedJSON: false
+    loadedJSON: false,
+    issueBody: undefined
   },
   methods: {
     getIssue: function() {
@@ -13,9 +14,10 @@ var app = new Vue({
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
             vm.issueObject = JSON.parse(xhr.responseText);
+            var converter = new showdown.Converter();
+            vm.issueBody: converter.makeHTML(vm.issueObject.body)
             vm.loadedJSON = true;
             console.log("JSON loaded!");
-            console.log(xhr.responseText);
           } else {
             console.error(xhr.statusText);
           }
