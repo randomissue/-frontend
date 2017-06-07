@@ -19,8 +19,8 @@
       <div class="flex-center">
         <div id="issue-content" :class="{'shown': loadedJSON}" v-if="loadedJSON">
           <div class="header">
-            <span class="title">404 page doesn't have search field</span>
-            <span class="id">#767</span>
+            <span class="title">{{ issueObject.title }}</span>
+            <span class="id">#{{ issueObject.number }}</span>
           </div>
           <div class="body">
             <article class="media">
@@ -32,7 +32,7 @@
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>{{ issueObject.user.login }}</strong> (Created: {{ issueObject.createdAt }})
+                    <strong>{{ issueObject.user.login }}</strong> (Created: {{ issueObject.created_at }})
                     <br>
                     {{ issueObject.body }}
                   </p>
