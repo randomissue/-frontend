@@ -15,7 +15,7 @@ var app = new Vue({
           if (xhr.status === 200) {
             vm.issueObject = JSON.parse(xhr.responseText);
             var converter = new showdown.Converter();
-            vm.issueBody: converter.makeHTML(vm.issueObject.body)
+            vm.issueBody = converter.makeHTML(vm.issueObject.body);
             vm.loadedJSON = true;
             console.log("JSON loaded!");
           } else {
