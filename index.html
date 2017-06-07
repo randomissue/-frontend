@@ -17,7 +17,7 @@
         <img id="logo" src="img/logo.svg" alt="IssueFix" />
       </nav>
       <div class="flex-center">
-        <div id="issue-content" :class="{'shown': loadedJSON}">
+        <div id="issue-content" :class="{'shown': loadedJSON}" v-if="loadedJSON">
           <div class="header">
             <span class="title">404 page doesn't have search field</span>
             <span class="id">#767</span>

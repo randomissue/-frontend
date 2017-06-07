@@ -6,12 +6,14 @@ var app = new Vue({
   },
   methods: {
     getIssue: function() {
+      var vm = this;
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "/issue", true);
       xhr.onload = function (e) {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            this.issueJSON = JSON.parse(xhr.responseText);
+            vm.issueObject = JSON.parse(xhr.responseText);
+            vm.loadedJSON = true;
             console.log("JSON loaded!");
             console.log(xhr.responseText);
           } else {
@@ -23,7 +25,6 @@ var app = new Vue({
         console.error(xhr.statusText);
       }
       xhr.send(null);
-      this.loadedJSON = true;
     }
   }
 });
