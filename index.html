@@ -26,15 +26,15 @@
             <article class="media">
               <figure class="media-left">
                 <p class="image is-32x32">
-                  <img src="http://bulma.io/images/placeholders/128x128.png">
+                  <img :src="issueObject.user.avatar_url">
                 </p>
               </figure>
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>{{ issueObject.user.login }}</strong> commented 6 hours ago
+                    <strong>{{ issueObject.user.login }}</strong> (Created: {{ issueObject.createdAt }})
                     <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                    {{ issueObject.body }}
                   </p>
                 </div>
                 <nav class="level is-mobile">
