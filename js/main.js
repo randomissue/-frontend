@@ -12,7 +12,6 @@ var app = new Vue({
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
             this.issueJSON = JSON.parse(xhr.responseText);
-            this.loadedJSON = true;
             console.log("JSON loaded!");
             console.log(xhr.responseText);
           } else {
@@ -24,6 +23,7 @@ var app = new Vue({
         console.error(xhr.statusText);
       }
       xhr.send(null);
+      this.loadedJSON = true;
     }
   }
 });
