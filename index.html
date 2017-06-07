@@ -34,7 +34,7 @@
                   <p>
                     <strong>{{ issueObject.user.login }}</strong> (Created: {{ issueObject.created_at }})
                     <br>
-                    <div :html="issueBody"></div>
+                    <div v-html="issueBody"></div>
                   </p>
                 </div>
                 <nav class="level is-mobile">
