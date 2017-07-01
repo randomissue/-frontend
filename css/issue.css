@@ -1,5 +1,5 @@
 #issue-content {
-  position: absolute;
+  position: fixed;
   display: flex;
   left: 50px;
   right: 50px;
@@ -11,6 +11,12 @@
   transform: translateY(-100vh);
   opacity: 0;
 }
+
+#issue-content.shown {
+  transform: translateY(0vh);
+  opacity: 1;
+}
+
 /* === ISSUE HEADER === */
 
 #issue-content .header {
@@ -24,7 +30,7 @@
 }
 
 #issue-content .header .title {
-  font-size: 32px;
+  font-size: 17px;
   font-weight: 500;
   margin: 0 30px;
 }
@@ -49,11 +55,6 @@
   right: 30px;
   bottom: 30px;
   overflow-y: scroll;
-}
-
-#issue-content.shown {
-  transform: translateY(0);
-  opacity: 1;
 }
 
 @media only screen and (max-width : 640px) {

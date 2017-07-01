@@ -17,47 +17,52 @@
         <img id="logo" src="img/logo.svg" alt="IssueFix" />
       </nav>
       <div class="flex-center">
-        <div id="issue-content" :class="{'shown': loadedJSON}" v-if="loadedJSON">
-          <div class="header">
-            <span class="title">{{ issueObject.title }}</span>
-            <span class="id">#{{ issueObject.number }}</span>
-          </div>
-          <div class="body">
-            <article class="media">
-              <figure class="media-left">
-                <p class="image is-32x32">
-                  <img :src="issueObject.user.avatar_url">
-                </p>
-              </figure>
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <strong>{{ issueObject.user.login }}</strong> (Created: {{ issueObject.created_at }})
-                    <br>
-                    <div v-html="issueBody"></div>
+        <transition name="fade-in-top">
+          <div id="issue-content" :class="{'shown': loadedJSON}" v-if="loadedJSON">
+            <div class="header">
+              <span class="title">{{ issueObject.title }}</span>
+              <span class="id">#{{ issueObject.number }}</span>
+            </div>
+            <div class="body">
+              <article class="media">
+                <figure class="media-left">
+                  <p class="image is-32x32">
+                    <img :src="issueObject.user.avatar_url">
                   </p>
-                </div>
-                <nav class="level is-mobile">
-                  <div class="level-left">
-                    <a class="level-item">
-                      <span class="icon is-small"><i class="fa fa-reply"></i></span>
-                    </a>
-                    <a class="level-item">
-                      <span class="icon is-small"><i class="fa fa-retweet"></i></span>
-                    </a>
-                    <a class="level-item">
-                      <span class="icon is-small"><i class="fa fa-heart"></i></span>
-                    </a>
+                </figure>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>{{ issueObject.user.login }}</strong> (Created: {{ issueObject.created_at }})
+                      <br>
+                      <div v-html="issueBody"></div>
+                    </p>
                   </div>
-                </nav>
-              </div>
-              <div class="media-right">
+                  <nav class="level is-mobile">
+                    <div class="level-left">
+                      <a class="level-item">
+                        <span class="icon is-small"><i class="fa fa-reply"></i></span>
+                      </a>
+                      <a class="level-item">
+                        <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+                      </a>
+                      <a class="level-item">
+                        <span class="icon is-small"><i class="fa fa-heart"></i></span>
+                      </a>
+                    </div>
+                  </nav>
+                </div>
+                <div class="media-right">
 
-              </div>
-            </article>
+                </div>
+              </article>
+            </div>
           </div>
-        </div>
-        <button type="button" id="issue-button" @click="getIssue" :class="{'hidden': loadedJSON}">Get a random GitHub issue!</button>
+        </transition>
+        <button type="button" id="issue-button" @click="getIssue" class="button" :class="{'hidden': loadedJSON, 'is-loading': loadingJSON}">Get a random GitHub issue</button>
+        <!-- ADD USER BUTTON
+          <button type="button" id="button adduser" @click="addUser" :class="{'hidden': loadedJSON}">Add user</button>
+        -->
       </div>
     </div>
     </div>

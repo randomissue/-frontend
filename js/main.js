@@ -3,11 +3,13 @@ var app = new Vue({
   data: {
     issueObject: undefined,
     loadedJSON: false,
+    loadingJSON: false,
     issueBody: undefined
   },
   methods: {
     getIssue: function() {
       var vm = this;
+      loadingJSON = true;
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "/issue", true);
       xhr.onload = function (e) {
@@ -18,6 +20,7 @@ var app = new Vue({
             vm.issueBody = converter.makeHtml(vm.issueObject.body);
             vm.loadedJSON = true;
             console.log("JSON loaded!");
+            loadingJSON = false;
           } else {
             console.error(xhr.statusText);
           }
@@ -27,6 +30,9 @@ var app = new Vue({
         console.error(xhr.statusText);
       }
       xhr.send(null);
+    },
+    addUser: function() {
+
     }
   }
 });

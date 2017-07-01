@@ -10,6 +10,8 @@ body {
   font-size: 17px;
   font-family: "Montserrat", Arial;
   overflow: hidden;
+
+  width: 100vw;
 }
 
 /* === LINKS === */
@@ -21,7 +23,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;s
+  color: #4040ff;
+  text-decoration: underline;
 }
 
 /* === FLEXBOX WRAPPER FOR EASY CENTERING === */
